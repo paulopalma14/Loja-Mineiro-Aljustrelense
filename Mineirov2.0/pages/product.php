@@ -6,11 +6,10 @@
  * Time: 19:07
  */
 
-require_once 'Controllers/loadControl.php';
-
-$cont = new \mineiro\loadControl();
+require_once '../Controllers/loadControl.php';
 require('menu.php');
 
+$cont = $_SESSION["cont"];
 $cod = $_GET['type'];
 
 ?>

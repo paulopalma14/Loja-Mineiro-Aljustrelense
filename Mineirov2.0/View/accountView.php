@@ -8,7 +8,6 @@
 
 namespace mineiro;
 
-
 class accountView
 {
 

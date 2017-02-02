@@ -44,6 +44,16 @@ body {
   overflow-x: hidden;
 }
 
+.col-lg-6.left {
+  width: 50%;
+  float: left;
+}
+
+.col-lg-6.right {
+  width: 50%;
+  float: right;
+}
+
 .no-padding {
   padding: 0;
 }

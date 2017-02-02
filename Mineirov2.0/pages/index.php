@@ -1,8 +1,8 @@
 <?php
-require_once 'Controllers/loadControl.php';
-
-$cont = new \mineiro\loadControl();
+require_once '../Controllers/loadControl.php';
 require('menu.php');
+
+$cont = $_SESSION["cont"];
 
 ?>
 
@@ -17,7 +17,7 @@ require('menu.php');
                         <div class="col-md-5 no-padding">
                             <div class="aa-promo-left">
                                 <div class="aa-promo-banner">
-                                    <img src="View/img/banners/kits_Banner.png" alt="img">
+                                    <img src="../View/img/banners/kits_Banner.png" alt="img">
                                 </div>
                             </div>
                         </div>
@@ -26,22 +26,22 @@ require('menu.php');
                             <div class="aa-promo-right">
                                 <div class="aa-single-promo-right">
                                     <div class="aa-promo-banner">
-                                        <img src="View/img/banners/crianca_Banner.png" alt="img">
+                                        <img src="../View/img/banners/crianca_Banner.png" alt="img">
                                     </div>
                                 </div>
                                 <div class="aa-single-promo-right">
                                     <div class="aa-promo-banner">
-                                        <img src="View/img/banners/woman_Banner.png" alt="img">
+                                        <img src="../View/img/banners/woman_Banner.png" alt="img">
                                     </div>
                                 </div>
                                 <div class="aa-single-promo-right">
                                     <div class="aa-promo-banner">
-                                        <img src="View/img/banners/tickets_Banner.png" alt="img">
+                                        <img src="../View/img/banners/tickets_Banner.png" alt="img">
                                     </div>
                                 </div>
                                 <div class="aa-single-promo-right">
                                     <div class="aa-promo-banner">
-                                        <img src="View/img/banners/diversos_Banner.png" alt="img">
+                                        <img src="../View/img/banners/diversos_Banner.png" alt="img">
                                     </div>
                                 </div>
                             </div>

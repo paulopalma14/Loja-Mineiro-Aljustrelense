@@ -1,12 +1,13 @@
 <?php
 
+session_start();
 
-
-
-
-require_once 'Controllers/loadControl.php';
-
+require_once '../Controllers/loadControl.php';
 $cont = new \mineiro\loadControl();
+
+$_SESSION["cart"] = $cont->getCart();
+$_SESSION["cont"] = $cont ;
+
 
 
 ?>
@@ -20,25 +21,25 @@ $cont = new \mineiro\loadControl();
     <title>Daily Shop | Home</title>
 
     <!-- Font awesome -->
-    <link href="View/css/font-awesome.css" rel="stylesheet">
+    <link href="../View/css/font-awesome.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="View/css/bootstrap.css" rel="stylesheet">
+    <link href="../View/css/bootstrap.css" rel="stylesheet">
     <!-- SmartMenus jQuery Bootstrap Addon CSS -->
-    <link href="View/css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="../View/css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
     <!-- Product view slider -->
-    <link rel="stylesheet" type="text/css" href="View/css/jquery.simpleLens.css">
+    <link rel="stylesheet" type="text/css" href="../View/css/jquery.simpleLens.css">
     <!-- slick slider -->
-    <link rel="stylesheet" type="text/css" href="View/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="../View/css/slick.css">
     <!-- price picker slider -->
-    <link rel="stylesheet" type="text/css" href="View/css/nouislider.css">
+    <link rel="stylesheet" type="text/css" href="../View/css/nouislider.css">
     <!-- Theme color -->
-    <link id="switcher" href="View/css/theme-color/default-theme.css" rel="stylesheet">
+    <link id="switcher" href="../View/css/theme-color/default-theme.css" rel="stylesheet">
     <!-- <link id="switcher" href="css/theme-color/bridge-theme.css" rel="stylesheet"> -->
     <!-- Top Slider CSS -->
-    <link href="View/css/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all">
+    <link href="../View/css/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all">
 
     <!-- Main style sheet -->
-    <link href="View/css/style.css" rel="stylesheet">
+    <link href="../View/css/style.css" rel="stylesheet">
 
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
@@ -83,10 +84,10 @@ $cont = new \mineiro\loadControl();
                 <div class="col-md-12">
                     <div class="aa-header-bottom-area">
                         <div class="aa-logo">
-                            <a href="index.php"><img src="View/img/logo_mineiro.png" alt="logo img"></a>
+                            <a href="index.php"><img src="../View/img/logo_mineiro.png" alt="logo img"></a>
                         </div>
                         <div class="aa-cartbox">
-                            <a class="aa-cart-link" href="#">
+                            <a class="aa-cart-link" href="cart.php">
                                 <span class="fa fa-shopping-basket"></span>
                                 <span class="aa-cart-title">Carrinho</span>
                                 <?php
@@ -94,12 +95,12 @@ $cont = new \mineiro\loadControl();
                                 ?>
                             </a>
                         </div>
-                        <div class="aa-search-box">
-                            <form action="">
-                                <input type="text" name="" id="" placeholder="Procure aqui ex.'homem'">
-                                <button type="submit"><span class="fa fa-search"></span></button>
-                            </form>
-                        </div>
+<!--                        <div class="aa-search-box">-->
+<!--                            <form action="">-->
+<!--                                <input type="text" name="" id="" placeholder="Procure aqui ex.'homem'">-->
+<!--                                <button type="submit"><span class="fa fa-search"></span></button>-->
+<!--                            </form>-->
+<!--                        </div>-->
                     </div>
                 </div>
             </div>

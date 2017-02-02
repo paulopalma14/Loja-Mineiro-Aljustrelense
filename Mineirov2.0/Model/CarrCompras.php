@@ -9,6 +9,9 @@
 
 namespace mineiro;
 
+require_once "Venda.php";
+require_once "Produto.php";
+
 class CarrCompras
 {
 
@@ -34,10 +37,28 @@ class CarrCompras
 
     }
 
+    public function getCar(){
+        return $this->car;
+    }
+
     function addProduct($id)
     {
+        $result = $this->produto->getProduct($id);
 
-        $this->car[count($this->car)] = $this->produto->getProduct($id);
+        $prod = new Produto() ;
+        $prod->setId($result[0]["id"]);
+        $prod->setNome($result[0]["nome"]);
+        $prod->setMarca($result[0]["marca"]);
+        $prod->setPreco($result[0]["preco"]);
+        $prod->setQuantidade($result[0]["quantidade"]);
+        $prod->setImage($result[0]["imagem"]);
+        $prod->setDescricao($result[0]["descricao"]);
+        $prod->setIdCategoria($result[0]["id_categoria"]);
+        $this->car[count($this->car)] = $prod ;
+        $this->car[count($this->car)] = $prod ;
+        $_SESSION["cart"] = $this->car;
+
+        var_dump($_SESSION["cart"]);
 
     }
 

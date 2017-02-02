@@ -8,8 +8,6 @@
 
 namespace mineiro;
 
-require_once 'Controllers/loadControl.php';
-
 class homeView
 {
 
@@ -26,8 +24,8 @@ class homeView
 
             echo '<li>';
             echo '<figure>';
-            echo '<a class="aa-product-img" href="product-detail.php?item='.$result[$i]["id"].'"><img src="View/img/products/' . $result[$i]["imagem"] . '" id="' . $result[$i]["id"] . '"></a>';
-            echo '<a class="aa-add-card-btn" href="cart.php?prod='.$result[$i]["id"].'"><span class="fa fa-shopping-cart"></span>Add To Cart</a>';
+            echo '<a class="aa-product-img" href="product-detail.php?item='.$result[$i]["id"].'"><img src="../View/img/products/' . $result[$i]["imagem"] . '" id="' . $result[$i]["id"] . '"></a>';
+            echo '<a class="aa-add-card-btn" href="cart.php?item='.$result[$i]["id"].'"><span class="fa fa-shopping-cart"></span>Add To Cart</a>';
             echo '<figcaption>';
             echo '<h4 class="aa-product-title"><a href="#">' . $result[$i]["nome"] . '</a></h4>';
             echo '<span class="aa-product-price">€' . $result[$i]["preco"] . '</span>';

@@ -8,7 +8,6 @@
 
 namespace mineiro;
 
-
 class productDetailView
 {
 
@@ -24,7 +23,7 @@ class productDetailView
         echo '<div id="demo-1" class="simpleLens-gallery-container">';
         echo '<div class="simpleLens-container">';
         echo '<div class="simpleLens-big-image-container">';
-        echo '<img src="View/img/products/' . $result . '" class="simpleLens-big-image"></a></div>';
+        echo '<img src="../View/img/products/' . $result . '" class="simpleLens-big-image"></a></div>';
         echo '</div></div></div></div>';
 
     }
@@ -64,7 +63,7 @@ class productDetailView
         echo '</div></div>';
         echo '<div class="aa-product-details-bottom">';
         echo '<ul class="nav nav-tabs" id="myTab2">';
-        echo '<li><a href="#description" data-toggle="tab">Description</a></li></ul>';
+        echo '<li><a href="#description" data-toggle="tab">Descrição</a></li></ul>';
         echo '<div class="tab-content"><div class="tab-pane fade in active" id="description">';
         echo '<p>' . $result . '</p>';
         echo '</div></div></div>';
@@ -93,8 +92,8 @@ class productDetailView
 
             echo '<li>';
             echo '<figure>';
-            echo '<a class="aa-product-img" href="product-detail.php?item='.$result[$i]["id"].'"><img src="View/img/products/' . $result[$i]["imagem"] . '" id="' . $result[$i]["id"] . '"></a>';
-            echo '<a class="aa-add-card-btn" href="cart.php?item='.$result[$i]["id"].'"><span class="fa fa-shopping-cart"></span>Add To Cart</a>';
+            echo '<a class="aa-product-img" href="product-detail.php?item='.$result[$i]["id"].'"><img src="../View/img/products/' . $result[$i]["imagem"] . '" id="' . $result[$i]["id"] . '"></a>';
+            echo '<a class="aa-add-card-btn" href="../Model/addProduct.php?prod='.$result[$i]["id"].'"><span class="fa fa-shopping-cart"></span>Adicionar ao Carrinho</a>';
             echo '<figcaption>';
             echo '<h4 class="aa-product-title"><a href="#">' . $result[$i]["nome"] . '</a></h4>';
             echo '<span class="aa-product-price">€' . $result[$i]["preco"] . '</span>';
@@ -102,7 +101,7 @@ class productDetailView
             echo '</figure>';
             if (intval($result[$i]['quantidade']) == 0) {
 
-                echo '<span class="aa-badge aa-sold-out" href="#">Sold Out!</span>';
+                echo '<span class="aa-badge aa-sold-out" href="#">Sem Stock!</span>';
             }
             echo '</li>';
         }
@@ -111,3 +110,4 @@ class productDetailView
     }
 
 }
+?>

@@ -15,6 +15,7 @@ require_once 'DB.php' ;
 class Produto
 {
 
+    var $id, $nome, $marca, $preco, $quantidade, $image, $descricao, $id_categoria ;
     var $conn ;
 
     function __construct() {
@@ -178,5 +179,86 @@ class Produto
         return $result;
 
     }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
+    }
+
+    public function getMarca()
+    {
+        return $this->marca;
+    }
+
+    public function setMarca($marca)
+    {
+        $this->marca = $marca;
+    }
+
+    public function getPreco()
+    {
+        return $this->preco;
+    }
+
+    public function setPreco($preco)
+    {
+        $this->preco = $preco;
+    }
+
+    public function getQuantidade()
+    {
+        return $this->quantidade;
+    }
+
+    public function setQuantidade($quantidade)
+    {
+        $this->quantidade = $quantidade;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function getDescricao()
+    {
+        return $this->descricao;
+    }
+
+    public function setDescricao($descricao)
+    {
+        $this->descricao = $descricao;
+    }
+
+    public function getIdCategoria()
+    {
+        return $this->id_categoria;
+    }
+
+    public function setIdCategoria($id_categoria)
+    {
+        $this->id_categoria = $id_categoria;
+    }
+
 
 }

@@ -9,20 +9,20 @@
 
 namespace mineiro;
 
-require_once 'View/accountView.php';
-require_once 'View/cartView.php';
-require_once 'View/checkoutView.php';
-require_once 'View/contactView.php';
-require_once 'View/homeView.php';
-require_once "View/productDetailView.php";
-require_once "View/productView.php";
-require_once "Model/CarrCompras.php";
-require_once "Model/Categoria.php";
-require_once "Model/Pagamento.php";
-require_once "Model/Produto.php";
-require_once "Model/TipoProd.php";
-require_once "Model/User.php";
-require_once "Model/Venda.php";
+require_once '../View/accountView.php';
+require_once '../View/cartView.php';
+require_once '../View/checkoutView.php';
+require_once '../View/contactView.php';
+require_once '../View/homeView.php';
+require_once "../View/productDetailView.php";
+require_once "../View/productView.php";
+require_once "../Model/CarrCompras.php";
+require_once "../Model/Categoria.php";
+require_once "../Model/Pagamento.php";
+require_once "../Model/Produto.php";
+require_once "../Model/TipoProd.php";
+require_once "../Model/User.php";
+require_once "../Model/Venda.php";
 
 class loadControl
 {
@@ -43,54 +43,45 @@ class loadControl
         $this->pagamento = new pagamento();
         $this->produto = new produto();
         $this->tipoProd = new tipoProd();
-        // $this->user = new user();
+        $this->user = new user();
         $this->venda = new venda();
     }
 
+    function btnRegister_onClick($newUser)
+    {
+        $this->user = $newUser;
+        $this->user->registerUser();
+    }
 
     function accountLoad()
     {
 
     }
 
-    function cartLoad()
+    function cartLoad($items)
     {
+        $this->cartView->showItems($items);
+    }
 
+    function getCart()
+    {
+        return $this->carrCompras->getCar();
+    }
+
+    function addProductToCarr($id)
+    {
+        $this->carrCompras->addProduct($id);
     }
 
     function cartQtyMenu()
     {
-
         $this->cartView->showQtyItems($this->carrCompras->getCarSize());
-
-    }
-
-    function checkLoad()
-    {
-
-    }
-
-    function btnAddProduct($id)
-    {
-
-       $this->carrCompras->addProduct($id);
-
-    }
-
-    function contactLoad()
-    {
-
     }
 
     function loadPopularHome()
     {
 
         $this->homeView->showPopular($this->produto->getPopularProduct());
-
-    }
-
-    function homeLoad()
-    {
 
     }
 
